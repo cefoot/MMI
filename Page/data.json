@@ -1,0 +1,21 @@
+﻿{
+  "chapter": [
+    {
+      "section": [
+        {
+          "title": "section1",
+          "content": "data/vid1.mp4"
+        },
+        {
+          "title": "section2",
+          "content": "data/vid2.mp4"
+        },
+        {
+          "title": "section3",
+          "content": "data/vid3.mp4"
+        }
+      ]
+    },
+    { "section": [ { "title": "section2" } ] }
+  ]
+}
