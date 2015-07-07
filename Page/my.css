@@ -35,7 +35,7 @@ nav,
     border: 0;
   }
   nav ul {
-    width: 10em;
+    width: 100%;
     padding: 0.8em;
     border: 1px solid black;
     background-color: silver;
