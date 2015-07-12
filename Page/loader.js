@@ -1,11 +1,27 @@
-﻿
+﻿var showVideo = function (file) {
+    /*<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>*/
+    var vid = document.createElement("video");
+    var src = document.createElement("source");
+    src.src = file;
+    vid.appendChild(src);
+    vid.appendChild(document.createTextNode("Ihr Browser unterstützt kein Video-Tag (HTML-5)"));
+    document.getElementsByClassName("content")[0].appendChild(vid);
+    vid.play();
+    vid.ontimeupdate = function (evt, obj) {
+        Debug.writeln(evt);
+    };
+}
 
 var handleMenuClicked = function (content) {
-    switch (conte.type) {
+    switch (content.type) {
         case "1":
             //video
             document.getElementById("greeting").style.display = "none";
-            showVideo();
+            showVideo(document.file);
             break;
     }
 };
