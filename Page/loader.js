@@ -23,8 +23,10 @@ var showVideo = function (file) {
     contentDiv.appendChild(progr);
 
     vid.play();
-    progr.max = vid.duration;
     vid.ontimeupdate = function (evt, obj) {
+        if (progr.max != evt.srcElement.duration && evt.srcElement.duration) {
+            progr.max != evt.srcElement.duration
+        }
         evt.srcElement.progr.value = evt.srcElement.currentTime;
         console.log(evt.srcElement.currentTime);
     };
