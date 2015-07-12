@@ -1,7 +1,8 @@
 ﻿var cleanContent = function () {
     var keeper = document.getElementById("greeting");
     var contentDiv = document.getElementsByClassName("content")[0];
-    for (var node in contentDiv.childNodes) {
+    for (var i = contentDiv.childNodes.length - 1; i >= 0; i--) {
+        var node = contentDiv.childNodes[i];
         if (node === keeper) continue;
         contentDiv.removeChild(node);
     }
