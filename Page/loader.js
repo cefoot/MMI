@@ -1,31 +1,20 @@
-﻿var cleanContent = function () {
-    var keeper = document.getElementById("greeting");
-    var contentDiv = document.getElementsByClassName("content")[0];
-    for (var i = contentDiv.childNodes.length - 1; i >= 0; i--) {
-        var node = contentDiv.childNodes[i];
-        if (node === keeper) continue;
-        contentDiv.removeChild(node);
-    }
-}
-
-var showVideo = function (file) {
-    /*<progress value="22" max="100"></progress>*/
-    cleanContent();
-    var contentDiv = document.getElementsByClassName("content")[0];
+﻿var showVideo = function (file) {
+    var dataCell = document.getElementById("dataContend");
+    var timeCell = document.getElementById("timeDisplay");
     var vid = document.createElement("video");
     var src = document.createElement("source");
     src.src = file;
     vid.appendChild(src);
     vid.appendChild(document.createTextNode("Ihr Browser unterstützt kein Video-Tag (HTML-5)"));
-    contentDiv.appendChild(vid);
+    dataCell.innerHTML = vid.outerHTML;
     var progr = document.createElement("progress");
     vid.progr = progr;
-    contentDiv.appendChild(progr);
+    timeCell.innerHTML = progr.outerHTML;
 
     vid.play();
     vid.ontimeupdate = function (evt, obj) {
         if (evt.srcElement.progr.max != evt.srcElement.duration && evt.srcElement.duration) {
-            evt.srcElement.progr.max != evt.srcElement.duration
+            evt.srcElement.progr.max = evt.srcElement.duration
         }
         evt.srcElement.progr.value = evt.srcElement.currentTime;
         console.log(evt.srcElement.currentTime);
