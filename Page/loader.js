@@ -24,8 +24,8 @@ var showVideo = function (file) {
 
     vid.play();
     vid.ontimeupdate = function (evt, obj) {
-        if (progr.max != evt.srcElement.duration && evt.srcElement.duration) {
-            progr.max != evt.srcElement.duration
+        if (evt.srcElement.progr.max != evt.srcElement.duration && evt.srcElement.duration) {
+            evt.srcElement.progr.max != evt.srcElement.duration
         }
         evt.srcElement.progr.value = evt.srcElement.currentTime;
         console.log(evt.srcElement.currentTime);
