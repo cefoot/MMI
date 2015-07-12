@@ -1,4 +1,16 @@
-﻿var buildMenu = function (chapters) {
+﻿
+
+var handleMenuClicked = function (content) {
+    switch (conte.type) {
+        case "1":
+            //video
+            document.getElementById("greeting").style.display = "none";
+            showVideo();
+            break;
+    }
+};
+
+var buildMenu = function (chapters) {
     var navDiv = document.getElementsByClassName("nav")[0];
     var nav = document.createElement("nav");
     for (var i = 0; i < chapters.chapter.length; i++) {
@@ -18,7 +30,7 @@
             a.href = "#";
             a.sect = section;
             a.onclick = function (evt,obj) {
-                alert(evt.srcElement.sect.content);
+                handleMenuClicked(evt.srcElement.sect.content);
             };
             a.appendChild(document.createTextNode(section.title));
             il.appendChild(a);
