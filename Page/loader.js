@@ -6,18 +6,21 @@
     src.src = file;
     vid.appendChild(src);
     vid.appendChild(document.createTextNode("Ihr Browser unterstützt kein Video-Tag (HTML-5)"));
-    dataCell.innerHTML = vid.outerHTML;
-    var progr = document.createElement("progress");
+    dataCell.innerHTML = '';
+    dataCell.appendChild(vid);
+    var progr = document.createElement("div");
     vid.progr = progr;
-    timeCell.innerHTML = progr.outerHTML;
+    progr.className = "progress";
+
+    timeCell.innerHTML = '';
+    timeCell.appendChild(progr);
+    progr.style.height = timeCell.offsetHeight + "px";
 
     vid.play();
     vid.ontimeupdate = function (evt, obj) {
-        if (evt.srcElement.progr.max != evt.srcElement.duration && evt.srcElement.duration) {
-            evt.srcElement.progr.max = evt.srcElement.duration
-        }
-        evt.srcElement.progr.value = evt.srcElement.currentTime;
-        console.log(evt.srcElement.currentTime);
+        var perc = evt.srcElement.currentTime / evt.srcElement.duration * 100
+        evt.srcElement.progr.style.backgroundImage = "linear-gradient(black " + perc + "%,white " + (perc + 1) + "%)";
+        //evt.srcElement.progr.value = evt.srcElement.currentTime;
     };
 }
 
@@ -50,7 +53,7 @@ var buildMenu = function (chapters) {
             var a = document.createElement("a");
             a.href = "#";
             a.sect = section;
-            a.onclick = function (evt,obj) {
+            a.onclick = function (evt, obj) {
                 handleMenuClicked(evt.srcElement.sect.content);
             };
             a.appendChild(document.createTextNode(section.title));
