@@ -9,6 +9,7 @@
 }
 
 var showVideo = function (file) {
+    /*<progress value="22" max="100"></progress>*/
     cleanContent();
     var contentDiv = document.getElementsByClassName("content")[0];
     var vid = document.createElement("video");
@@ -17,9 +18,15 @@ var showVideo = function (file) {
     vid.appendChild(src);
     vid.appendChild(document.createTextNode("Ihr Browser unterstützt kein Video-Tag (HTML-5)"));
     contentDiv.appendChild(vid);
+    var progr = document.createElement("progress");
+    vid.progr = progr;
+    contentDiv.appendChild(progr);
+
     vid.play();
+    progr.max = vid.duration;
     vid.ontimeupdate = function (evt, obj) {
-        console.log(evt.timeStamp);
+        evt.srcElement.progr.value = evt.srcElement.currentTime;
+        console.log(evt.srcElement.currentTime);
     };
 }
 
@@ -28,7 +35,7 @@ var handleMenuClicked = function (content) {
         case "1":
             //video
             document.getElementById("greeting").style.display = "none";
-            showVideo(document.file);
+            showVideo(content.file);
             break;
     }
 };
