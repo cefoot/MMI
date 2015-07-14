@@ -47,7 +47,7 @@ var showVideo = function (file, detail) {
         var perc = evt.srcElement.currentTime / evt.srcElement.duration * 100;
         evt.srcElement.progr.style.backgroundImage = "linear-gradient(black " + perc + "%,white " + (perc + 1) + "%)";
 
-        var time = evt.srcElement.currentTime.toHHMMSS()
+        var time = (""+evt.srcElement.currentTime).toHHMMSS();
         var timeCont = document.getElementById("timeContend");
         if(evt.srcElement.dataTimes[timeCont.lastIdx] < time){
             timeCont.innerHTML = '';
