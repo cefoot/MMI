@@ -6,7 +6,33 @@
           "title": "section1",
           "content": {
             "file": "data/KinectWorldV1 - Demo (480p).mp4",
-            "type": "1"
+            "type": "1",
+            "detail": {
+              "00:00:00": {
+                "file": "Das Video Zeigt mich bei der Präsentation einer eigenen Anwendung.",
+                "type": "2"
+              },
+              "00:10:00": {
+                "file": "Mit Hilfe des 'Kinect for Windows v2' -Sensors wird mein Skelett erfasst.",
+                "type": "2"
+              },
+              "00:20:00": {
+                "file": "Der Grüne und Rote Punkt auf dem Boden zeigt die errechnette Schnittstellen auf dem Boden auf die ich mit den Händen Zeige.",
+                "type": "2"
+              },
+              "00:30:00": {
+                "file": "Durch das auffächern der Hand kann eine Stelle auf dem Boden markiert werden.",
+                "type": "2"
+              },
+              "00:43:00": {
+                "file": "Achtung hüpfende Katze!",
+                "type": "2"
+              },
+              "00:54:00": {
+                "file": "Außerdem besitzt die Anwendung einen Debug-Modus, bei dem der gesammte erkannte Boden markiert wird.",
+                "type": "2"
+              }
+            }
           }
         },
         {

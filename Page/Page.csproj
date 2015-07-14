@@ -37,6 +37,7 @@
     <None Include="data.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\KinectWorldV1 - Demo %28480p%29.mp4" />
     <Content Include="Index.html" />
     <Content Include="loader.js" />
     <Content Include="my.css" />
