@@ -51,7 +51,7 @@ var showVideo = function (file, detail) {
         var timeCont = document.getElementById("timeContend");
         if(evt.srcElement.dataTimes[timeCont.lastIdx] < time){
             timeCont.innerHTML = '';
-            timeCont.appendChild(document.createTextNode(evt.srcElement.dataDetail[evt.srcElement.dataTimes[timeCont.lastIdx]]));
+            timeCont.appendChild(document.createTextNode(evt.srcElement.dataDetail[evt.srcElement.dataTimes[timeCont.lastIdx]].file));
             timeCont.lastIdx++;
         }
     };
